@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>周六啦</title>
+
+		<style type="text/css">
+			body {
+				margin: 0px;
+			}
+			
+			.banner {
+				float: left;
+				width: 100%;
+				height: 800px;
+				background: url(img/about_us_title_bg.jpg);
+			}
+			
+			.btn {
+				width: 30px;
+				height: 30px;
+				position: relative;
+				top: 20px;
+				left: 96%;
+			}
+			
+			#line_1,
+			#line_2,
+			#line_3 {
+				background-color: white;
+				width: 30px;
+				height: 2px;
+				border-radius: 5px;
+				margin-top: 8px;
+			}
+			
+			.menu {
+				position: relative;
+				width: 35%;
+				height: 800px;
+				top: -30px;
+				left: 65%;
+				background-color: aquamarine;
+			}
+			
+			nav.offset {
+				transform: translate(-100%, 0);
+				transition: all 0.5s ease-in-out;
+			}
+			
+			nav.scrolling {
+				transform: translate(0, 0);
+			}
+			
+			.change1 {
+				margin-left: 5px;
+				transform: rotate(45deg);
+			}
+			
+			.change2 {}
+			
+			.change3 {
+				margin-left: 5px;
+				transform: rotate(135deg);
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="main">
+			<div class="banner">
+
+			</div>
+			<div class="btn">
+				<div id="line_1"></div>
+				<div id="line_2"></div>
+				<div id="line_3"></div>
+			</div>
+			<div class="" id="menu">
+
+			</div>
+		</nav>
+		<script src="js/jQuery.js"></script>
+		<script src="js/jQuery.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+
+		<script type="text/javascript">
+			var a = 1;
+
+			$(".btn").click(function() {
+				a++;
+				if(a % 2 == 0) {
+					$(".btn").css("left", "61%");
+					$(".banner").css("width", "65%")
+					$("#menu").addClass("menu")
+					$('#menu').addClass("offset");
+					$('#menu').addClass("scrolling");
+					$("#line_1").addClass("change1");
+					$("#line_3").addClass("change2");
+					$("#line_3").addClass("change3");
+				} else {
+
+					$(".btn").css("left", "96%");
+					$(".banner").css("width", "100%")
+					$("#menu").removeClass("menu")
+					$('#menu').removeClass("offset");
+					$('#menu').removeClass("scrolling");
+					$("#line_1").removeClass("change1");
+					$("#line_2").removeClass("change2");
+					$("#line_3").removeClass("change3");
+
+				}
+
+			});
+		</script>
+	</body>
+
+</html>
